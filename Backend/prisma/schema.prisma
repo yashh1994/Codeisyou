@@ -1,0 +1,54 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"  // or your database provider
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                  String   @id @default(uuid())
+  user_name             String   @unique 
+  name                String
+  email               String   @unique
+  password            String
+  createdAt           DateTime @default(now())
+
+  profile             Profile?
+
+}
+
+
+model Profile {
+    id                      String   @id @default(uuid())
+    userId                  String   @unique
+    user                    User   @relation(fields: [userId], references: [id])
+
+    bio                     String?
+    location                String?
+    companyOrUniversity     String?
+
+    // Platforms
+
+    leetcodeUsername    String? 
+    hackerrankUsername  String?
+    codeforcesUsername  String?
+    codechefUsername    String?
+    atcoderUsername     String?
+
+    // Links
+
+    gmailLink           String?
+    githubLink          String?
+    linkedinLink        String?
+    resumeLink         String?
+    portfolioLink      String?
+    twitterLink        String?
+
+    programmingLanguages  String[] @default([]) // Array of programming languages
+
+    codingStats         Json?
+}
