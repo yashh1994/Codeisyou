@@ -7,7 +7,7 @@ import type { User } from '@prisma/client'
 const prisma = new PrismaClient();
 
 
-export async function signUpUser(email: string, password: string, name: string, user_name: string): Promise<{ user: Omit<User, 'password'>, token: string } | null> {
+export async function signUpUser(email: string, password: string, name: string, user_name: string): Promise<{ user: Omit<Omit<User, 'id'>, 'password'>, token: string } | null> {
     console.debug('signUpUser called with:', { email, name });
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
@@ -34,14 +34,14 @@ export async function signUpUser(email: string, password: string, name: string, 
     console.debug('User created in database:', { id: user.id, email: user.email, name: user.name });
 
     // Exclude password from returned user
-const { password: _, ...rest } = user
-const userWithoutPassword = rest as Omit<User, 'password'>
+    const { password: _, id: __, ...rest } = user
+    const userWithoutPassword = rest as Omit<Omit<User, 'id'>, 'password'>
 
-const token = jwt.sign(
-  { email: user.email, name: user.name },
-  config.jwtSecret ,
-  { expiresIn: '7d' }
-)
+    const token = jwt.sign(
+    { email: user.email, name: user.name },
+    config.jwtSecret,
+    { expiresIn: '7d' }
+    );
 
 return { user: userWithoutPassword, token }
     

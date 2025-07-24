@@ -2,9 +2,6 @@ import { Client } from 'pg';
 
 import config  from '../src/config/config'
 
-
-
-
 async function testPostgresConnection() {
 
     console.log("Database URL:", config);
@@ -17,7 +14,14 @@ async function testPostgresConnection() {
     } catch (error) {
         console.error('Postgres connection failed:', error);
     } finally {
-        await client.end();
+        try{
+            await client.end(); 
+            console.log("Closed");
+        }catch(err){
+
+            console.log("-------------")
+            console.log("Error closing connection", err);
+        }
     }
 }
 
