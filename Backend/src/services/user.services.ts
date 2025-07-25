@@ -102,6 +102,8 @@ export async function getUserProfile(token: string): Promise<Omit<Omit<Profile, 
             throw new Error('User or profile not found');
         }
 
+        console.log("User profile retrieved successfully:", user.profile);
+
         const { id: _, userId: __, ...profileWithoutId } = user.profile;
         return profileWithoutId as Omit<Omit<Profile, 'id'>, 'userId'>;
 
@@ -111,4 +113,54 @@ export async function getUserProfile(token: string): Promise<Omit<Omit<Profile, 
     }
 }
 
+export async function saveUserProfile(token: string, profileData: Omit<Profile, 'id' | 'userId'>): Promise<void> {
+    console.debug('saveUserProfile called with token:', token);
+    try {
+        const decoded = jwt.verify(token, config.jwtSecret) as { email: string, user_name: string };
+        console.debug('Token decoded successfully:', decoded);
+
+        const user = await prisma.user.findUnique({
+            where: { user_name: decoded.user_name },
+            include: { profile: true }
+        });
+
+        if (!user || !user.profile) {
+            console.debug('User or profile not found for user_name:', decoded.user_name);
+            throw new Error('User or profile not found');
+        }
+
+        const updatedProfile = await prisma.profile.update({
+            where: { id: user.profile.id },
+            data: {
+            bio: profileData.bio ?? user.profile.bio,
+            location: profileData.location ?? user.profile.location,
+            companyOrUniversity: profileData.companyOrUniversity ?? user.profile.companyOrUniversity,
+
+            leetcodeUsername: profileData.leetcodeUsername ?? user.profile.leetcodeUsername,
+            hackerrankUsername: profileData.hackerrankUsername ?? user.profile.hackerrankUsername,
+            codeforcesUsername: profileData.codeforcesUsername ?? user.profile.codeforcesUsername,
+            codechefUsername: profileData.codechefUsername ?? user.profile.codechefUsername,
+            atcoderUsername: profileData.atcoderUsername ?? user.profile.atcoderUsername,
+
+            gmailLink: profileData.gmailLink ?? user.profile.gmailLink,
+            githubLink: profileData.githubLink ?? user.profile.githubLink,
+            linkedinLink: profileData.linkedinLink ?? user.profile.linkedinLink,
+            resumeLink: profileData.resumeLink ?? user.profile.resumeLink,
+            portfolioLink: profileData.portfolioLink ?? user.profile.portfolioLink,
+            twitterLink: profileData.twitterLink ?? user.profile.twitterLink,
+
+            programmingLanguages: profileData.programmingLanguages ?? user.profile.programmingLanguages,
+
+            codingStats: profileData.codingStats ?? user.profile.codingStats ?? {},
+            }
+        });
+
+        console.log("User profile updated successfully:", updatedProfile);
+
+        return;
+    } catch (error) {
+        console.error('Error verifying token or saving user profile:', error);
+        throw new Error('Failed to save user profile');
+    }
+}
 

@@ -33,12 +33,40 @@ async function getUserProfileTest() {
         console.log('Token:', token);
 
         // Get user profile
-        const profileRes = await axios.get(`${BASE_URL}/user-profile`, {
+        const profileRes = await axios.get(`${BASE_URL}/get-user-profile`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         });
+        // Update user bio
+        const newBio = 'This is my newest bio!';
+        const updateRes = await axios.post(`${BASE_URL}/save-user-profile`, {
+            bio: newBio,
+        }, {
+            headers: {
+            Authorization: `Bearer ${token}`,
+            },
+        });
 
+        if (updateRes.status !== 200) {
+            throw new Error(updateRes.data.message || 'Update profile failed');
+        }
+
+        // Fetch updated profile
+        const updatedProfileRes = await axios.get(`${BASE_URL}/get-user-profile`, {
+            headers: {
+            Authorization: `Bearer ${token}`,
+            },
+        });
+
+        if (updatedProfileRes.status !== 200) {
+            throw new Error(updatedProfileRes.data.message || 'Get updated profile failed');
+        }
+
+        if (updatedProfileRes.data.userProfile.bio !== newBio) {
+            console.log("Fuck this is new: ", updatedProfileRes.data.userProfile);
+            throw new Error('Bio was not updated correctly');
+        }
         if (profileRes.status !== 200) {
             throw new Error(profileRes.data.message || 'Get profile failed');
         }

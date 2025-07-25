@@ -5,5 +5,7 @@ const userRoute = Router();
 
 userRoute.post('/login', userController.loginUser);
 userRoute.post('/signup', userController.signupUser);
-userRoute.get('/user-profile',userController.getUserProfile)
+userRoute.get('/get-user-profile',userController.getUserProfile)
+userRoute.post('/save-user-profile', userController.saveUserProfile);
+
 export default userRoute;
