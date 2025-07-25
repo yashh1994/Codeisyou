@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import config from '../config/config';
 import jwt from 'jsonwebtoken';
-import type { User } from '@prisma/client'
+import type { Profile, User } from '@prisma/client'
 // import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
@@ -31,6 +31,13 @@ export async function signUpUser(email: string, password: string, name: string, 
   });
 
 
+    await prisma.profile.create({
+        data :{
+            userId: user.id,
+        }
+    });
+
+
     console.debug('User created in database:', { id: user.id, email: user.email, name: user.name });
 
     // Exclude password from returned user
@@ -38,7 +45,7 @@ export async function signUpUser(email: string, password: string, name: string, 
     const userWithoutPassword = rest as Omit<Omit<User, 'id'>, 'password'>
 
     const token = jwt.sign(
-    { email: user.email, name: user.name },
+    { email: user.email, user_name: user.user_name },
     config.jwtSecret,
     { expiresIn: '7d' }
     );
@@ -70,10 +77,38 @@ export async function loginUser(email: string, password: string): Promise<string
 
     
     const token = jwt.sign(
-        { email: user.email, name: user.name },
+        { email: user.email, user_name: user.user_name },
         config.jwtSecret,
         { expiresIn: '7d' }
     );
 
     return token;
 }
+    
+
+export async function getUserProfile(token: string): Promise<Omit<Omit<Profile, 'id'>, 'userId'> | null> {
+    console.debug('getUserProfile called with token:', token);
+    try {
+        const decoded = jwt.verify(token, config.jwtSecret) as { email: string, user_name: string };
+        console.debug('Token decoded successfully:', decoded);
+
+        const user = await prisma.user.findUnique({
+            where: { user_name: decoded.user_name },
+            include: { profile: true }
+        });
+
+        if (!user || !user.profile) {
+            console.debug('User or profile not found for user_name:', decoded.user_name);
+            throw new Error('User or profile not found');
+        }
+
+        const { id: _, userId: __, ...profileWithoutId } = user.profile;
+        return profileWithoutId as Omit<Omit<Profile, 'id'>, 'userId'>;
+
+    } catch (error) {
+        console.error('Error verifying token or fetching user profile:', error);
+        throw new Error('Failed to retrieve user profile');
+    }
+}
+
+

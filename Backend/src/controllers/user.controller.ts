@@ -40,3 +40,33 @@ export const signupUser = async (req: Request, res: Response, next: NextFunction
     return res.status(500).json({ message: errorMessage, error: errorMessage });
   }
 };
+
+
+export const getUserProfile = async (req: Request, res: Response, next: NextFunction) => {
+  let token: string | undefined;
+
+  const authHeader = req.headers.authorization;
+  if (authHeader?.startsWith('Bearer ')) {
+    token = authHeader.slice(7);
+  } else {
+    return res.status(401).json({ message: 'Authorization header missing or malformed' });
+  }
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token is required' });
+  }
+
+  try {
+    const userProfile = await userService.getUserProfile(token);
+
+    if (!userProfile) {
+      return res.status(404).json({ message: 'User profile not found' });
+    }
+
+    return res.status(200).json({ message: 'User profile retrieved successfully', userProfile });
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ message: 'Internal server error', error: errorMessage });
+    // or optionally: next(err);
+  }
+};
