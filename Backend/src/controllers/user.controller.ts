@@ -41,7 +41,6 @@ export const signupUser = async (req: Request, res: Response, next: NextFunction
   }
 };
 
-
 export const getUserProfile = async (req: Request, res: Response, next: NextFunction) => {
   let token: string | undefined;
 
@@ -68,5 +67,30 @@ export const getUserProfile = async (req: Request, res: Response, next: NextFunc
     const errorMessage = err instanceof Error ? err.message : String(err);
     return res.status(500).json({ message: 'Internal server error', error: errorMessage });
     // or optionally: next(err);
+  }
+};
+
+export const saveUserProfile = async (req: Request, res: Response, next: NextFunction) => {
+  let token: string | undefined;
+
+  const authHeader = req.headers.authorization;
+  if (authHeader?.startsWith('Bearer ')) {
+    token = authHeader.slice(7);
+  } else {
+    return res.status(401).json({ message: 'Authorization header missing or malformed' });
+  }
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token is required' });
+  }
+
+  try {
+    const profileData = req.body;
+    const updatedProfile = await userService.saveUserProfile(token, profileData);
+
+    return res.status(200).json({ message: 'User profile saved successfully', updatedProfile });
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ message: 'Internal server error', error: errorMessage });
   }
 };

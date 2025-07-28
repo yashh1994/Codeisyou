@@ -14,6 +14,7 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.15",
+    "@types/node-fetch": "^2.6.12",
     "@types/pg": "^8.15.4",
     "@types/swagger-ui-express": "^4.1.8",
     "nodemon": "^3.1.10",
@@ -27,6 +28,8 @@
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "leetcode-query": "^2.0.1",
+    "node-fetch": "^2.7.0",
     "pg": "^8.16.3",
     "prisma": "^6.12.0"
   }
