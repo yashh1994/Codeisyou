@@ -164,3 +164,34 @@ export async function saveUserProfile(token: string, profileData: Omit<Profile, 
     }
 }
 
+export async function changeCodingStats(token: string): Promise<void> {
+    console.debug('changeCodingStats called with token:', token);
+    try {
+        const decoded = jwt.verify(token, config.jwtSecret) as { email: string, user_name: string };
+        console.debug('Token decoded successfully:', decoded);
+
+        const user = await prisma.user.findUnique({
+            where: { user_name: decoded.user_name },
+            include: { profile: true }
+        });
+
+        if (!user || !user.profile) {
+            console.debug('User or profile not found for user_name:', decoded.user_name);
+            throw new Error('User or profile not found');
+        }
+
+        console.log("User coding stats retrieved successfully:", user.profile.codingStats);
+
+
+        // TODO: Implement logic to change coding stats
+
+
+
+
+        return;
+
+    } catch (error) {
+        console.error('Error verifying token or fetching user coding stats:', error);
+        throw new Error('Failed to retrieve user coding stats');
+    }
+}
