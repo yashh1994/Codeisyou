@@ -18,4 +18,7 @@ export default {
     codeforces_api_key: process.env.CODEFORCES_API_KEY !== undefined ? process.env.CODEFORCES_API_KEY : 'your_api_key',
     codeforces_secret: process.env.CODEFORCES_SECRET !== undefined ? process.env.CODEFORCES_SECRET : 'your_secret',
     codeforces_username: process.env.CODEFORCES_USERNAME !== undefined ? process.env.CODEFORCES_USERNAME : 'your_username',
+
+    // Codechef
+    codechef_username:process.env.CODECHEF_USERNAME !== undefined ? process.env.CODECHEF_USERNAME : 'default_username',
 };
