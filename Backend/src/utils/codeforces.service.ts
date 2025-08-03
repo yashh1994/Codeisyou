@@ -12,6 +12,7 @@ class UserCodeforces {
   badges: any[];
   contests: any[];
   calander: Map<number, any>;
+  solvedProblems: any[];
 
   constructor();
   constructor(
@@ -22,7 +23,8 @@ class UserCodeforces {
     language?: string[],
     badges?: [],
     contests?: [],
-    calander?: Map<number, any>
+    calander?: Map<number, any>,
+    solvedProblems?: any[]
   ) {
     this.totalSolved = totalSolved ?? "0";
     this.currentRating = currentRating ?? "0";
@@ -32,13 +34,9 @@ class UserCodeforces {
     this.badges = badges ?? [];
     this.contests = contests ?? [];
     this.calander = calander ?? new Map<number, any>();
+    this.solvedProblems = solvedProblems ?? [];
   }
 }
-
-
-
-
-
 
 
 async function getCodeforcesUserInfo(username: string, apiKey: string, secret: string) {
@@ -64,9 +62,10 @@ async function getCodeforcesUserInfo(username: string, apiKey: string, secret: s
     const contests = [];
     const languages = new Set<string>();
     const calander = new Map<any, any>();
-    const streak = 0
+    let streak = 0
     let totalSolved = 0
 
+    const solvedProblems: any[] = [];
 
     for(const contest of userstatusResponse.data.result) {
         contests.push({
@@ -84,6 +83,7 @@ async function getCodeforcesUserInfo(username: string, apiKey: string, secret: s
         
         const date = new Date(status.creationTimeSeconds * 1000);
         const day = date.toISOString().split('T')[0];
+        solvedProblems.push(status.problem);
         calander.set(
             day,
             (calander.get(day) ?? 0) + 1
@@ -92,7 +92,26 @@ async function getCodeforcesUserInfo(username: string, apiKey: string, secret: s
         languages.add(status.programmingLanguage);
       }
     }
-    
+
+
+    let last;
+    let currentStreak = 0;
+    for(const [key, value] of calander) {
+      if(!last){
+        last = key 
+        currentStreak = 1
+      }else{
+        if(areDatesAdjacent(last, key)){
+          currentStreak++;
+        }else{
+          streak = Math.max(streak, currentStreak);
+          currentStreak = 1;
+        }
+        last = key;
+      }
+    }
+    streak = Math.max(streak, currentStreak);
+
 
     userCodeforces.contests = contests;
     userCodeforces.currentRating = response.data.result[0].rating || 0;
@@ -100,13 +119,29 @@ async function getCodeforcesUserInfo(username: string, apiKey: string, secret: s
     userCodeforces.totalSolved = totalSolved.toString();
     userCodeforces.language = Array.from(languages);
     userCodeforces.calander = calander;
-    
+    userCodeforces.solvedProblems = solvedProblems;
+    userCodeforces.streak = streak.toString()
 
     console.log("User ------------------\n", userCodeforces);
+
+    
   } catch (error) {
     console.error("Error fetching user info:", error);
   }
 }
+
+function areDatesAdjacent(date1: string, date2: string): boolean {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+  const diff = d2.getTime() - d1.getTime();
+  const oneDay = 24 * 60 * 60 * 1000;
+  return Math.abs(diff) === oneDay;
+}
+
+
+
+
+
 
 // Example usage:
 // Replace with your actual Codeforces username, API key, and secret
