@@ -154,9 +154,9 @@ const main = async () => {
         dailyCounts[day].add(sub.challenge_id);
     }
 
-    calander = Object.fromEntries(
-        Object.entries(dailyCounts).map(([day, ids]) => [day, (ids as Set<any>).size])
-    );
+        calander = Object.fromEntries(
+            Object.entries(dailyCounts).map(([day, ids]) => [day, (ids as Set<any>).size])
+        );
 
 
     // ! Calculate streak
@@ -177,6 +177,22 @@ const main = async () => {
         }
     }
     streak = Math.max(streak, currentStreak);
+
+
+
+    const contests = data_score_elo.map((track: any) => ({
+    name: track.name,
+    rank: track.contest.rank,
+    score: track.contest.score,
+    level: track.contest.level,
+  }));
+
+
+
+
+
+
+
 
 
     const userHackerrank = new UserHackerrank()
@@ -200,7 +216,7 @@ const main = async () => {
         stars: badge.stars,
     }));
 
-    console.log(contest);
+    console.log(userHackerrank);
 
 }
 
