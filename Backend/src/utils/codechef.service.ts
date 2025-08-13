@@ -1,29 +1,30 @@
 
 // Check for Total Problme solved, Contest.
 
-// Done Solved Problme solved, Languages, Card.
+// Done Solved Problme solved, Languages, Card, Calender.
 
 // TODO: Contest
 
 import axios from "axios";
 import config from "../config/config"
 import * as cheerio from 'cheerio';
+import * as fs from 'fs';
+import * as path from 'path';
+import { areDatesAdjacent } from "./utils";
  
 
 class UserCodechef {
     contest: any[]
     problemSolved: any[]
-    totalSolved: string
-    rating: string
-    globalRank: string
     card: { [key: string]: any }
+    calender: {}
+    languages: {}
     constructor() {
         this.contest = [];
         this.problemSolved = [];
-        this.totalSolved = "";
-        this.rating = "";
-        this.globalRank = "";
         this.card = {};
+        this.calender = {};
+        this.languages = {};
     }
 }
 
@@ -36,53 +37,86 @@ const main = async () => {
     let totalSolved = 0
     let unique = 0
     const solvedProblmes = []
-    const languages = new Set()
+    const languages: any = {}
     const calender = new Set();
 
     console.log(url1 + config.codechef_username);
     const response = await axios.get(url1 + config.codechef_username);
 
-    userCodechef.card['globalRank'] = response.data.globalRank;
-    userCodechef.card['rating'] = response.data.rating;
-    userCodechef.card['stars'] = response.data.stars;
-    userCodechef.card['countryRank'] = response.data.countryRank;
-    
 
-    const totalProblems = await fetchAllRecentSubmissions('yash_fadadu')
-    const uniqueProblems = new Set()
+
+    let totalProblems: any[] = [];
+    const filePath = path.join(__dirname, 'codechef_response.json');
+    if (fs.existsSync(filePath)) {
+        const fileData = await fs.promises.readFile(filePath, 'utf-8');
+        totalProblems = JSON.parse(fileData);
+    } else {
+        totalProblems = await fetchAllRecentSubmissions(config.codechef_username);
+        await saveResponseToFile(totalProblems);
+    }
+
+
+
+
+    // Calculating the total solved problems and languages
+
+    let AcceptedProblems = 0
+    const uniqueSubmissions = new Set();
+    const dailyCounts: any = {};
+
     if (totalProblems && Array.isArray(totalProblems)) {
         for (const problem of totalProblems) {
             if(problem.accepted){
-                solvedProblmes.push(problem)
+
+                dailyCounts[problem.date] = (dailyCounts[problem.date] || 0) + 1;
+
+                AcceptedProblems++;
+                if (!uniqueSubmissions.has(problem.problemUrl)) {
+                    uniqueSubmissions.add(problem.problemUrl);
+                    userCodechef.problemSolved.push(problem);
+                }
             }
-            if(!uniqueProblems.has(problem.problemName)){
-                uniqueProblems.add(problem.problemName)
-            }
-            languages.add(problem.language)
+            languages[problem.language] = (languages[problem.language] || 0) + 1;
         }
     }
 
 
-    //   const dailyCounts: any = {};
 
-    // for (const sub of uniqueSubmissions) {
-    //     const day = new Date(sub.created_at * 1000).toISOString().split('T')[0];
 
-    //     if (!dailyCounts[day]) dailyCounts[day] = new Set();
-    //     dailyCounts[day].add(sub.challenge_id);
+    // ! Calculate streak
+    // let streak = 0;
+    // let last;
+    // let currentStreak = 0;
+    // for (const [key, value] of Object.entries(dailyCounts)) {
+    //     if (!last) {
+    //         last = key
+    //         currentStreak = 1
+    //     } else {
+    //         if (areDatesAdjacent(last, key)) {
+    //             currentStreak++;
+    //         } else {
+    //             streak = Math.max(streak, currentStreak);
+    //             currentStreak = 1;
+    //         }
+    //         last = key;
+    //     }
     // }
-
-    //     calander = Object.fromEntries(
-    //         Object.entries(dailyCounts).map(([day, ids]) => [day, (ids as Set<any>).size])
-    //     );
-
-
-
-    console.log(totalProblems.length)
-
-
+    // streak = Math.max(streak, currentStreak);
+    
 
     
+
+
+    userCodechef.card['globalRank'] = response.data.globalRank;
+    userCodechef.card['rating'] = response.data.rating;
+    userCodechef.card['Acceptance Rate'] = ((AcceptedProblems / totalProblems.length) * 100).toFixed(2) + "%";
+    userCodechef.card['Total Problems Solved'] = uniqueSubmissions.size;
+
+    userCodechef.languages = languages
+    userCodechef.calender = dailyCounts;
+
+
+    console.log(userCodechef);
 }
 
 main().catch((error) => {
@@ -100,6 +134,19 @@ main().catch((error) => {
 
 
 
+//! Helpers
+
+
+
+async function saveResponseToFile(data: any, filename: string = 'codechef_response.json') {
+    const filePath = path.join(__dirname, filename);
+    try {
+        await fs.promises.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+        console.log(`Response saved to ${filePath}`);
+    } catch (err) {
+        console.error('Error saving response:', err);
+    }
+}
 
 async function fetchAllRecentSubmissions(userHandle: string) {
   let page = 0;
@@ -150,8 +197,9 @@ function parseSubmissions(htmlString: string) {
     const problemName = problemLink.text().trim() || problemCell.text().trim();
     const problemUrl = problemLink.attr('href') || '';
 
-    const result = $(tds[2]).text().trim();
-    const accepted = /AC|Accepted/i.test(result);
+    const resultSpan = $(tds[2]).find('span');
+    const result = resultSpan.attr('title')?.trim() || resultSpan.text().trim() || $(tds[2]).text().trim();
+    const accepted = /accepted|ac/i.test(result);
 
     const language = $(tds[3]).text().trim();
 
