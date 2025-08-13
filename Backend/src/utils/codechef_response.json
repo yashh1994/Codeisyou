@@ -1,0 +1,740 @@
+[
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH12",
+    "problemUrl": "/learn/course/python/LTCPY03/problems/PYTH12",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800760"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH12",
+    "problemUrl": "/learn/course/python/LTCPY03/problems/PYTH12",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800687"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH10",
+    "problemUrl": "/learn/course/python/LTCPY03/problems/PYTH10",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": ""
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH10",
+    "problemUrl": "/learn/course/python/LTCPY03/problems/PYTH10",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "PYTH 3",
+    "solutionUrl": ""
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH09",
+    "problemUrl": "/learn/course/python/LTCPY02/problems/PYTH09",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800411"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH09",
+    "problemUrl": "/learn/course/python/LTCPY02/problems/PYTH09",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800391"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH09",
+    "problemUrl": "/learn/course/python/LTCPY02/problems/PYTH09",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800360"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH08",
+    "problemUrl": "/learn/course/python/LTCPY02/problems/PYTH08",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800285"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH07",
+    "problemUrl": "/learn/course/python/LTCPY02/problems/PYTH07",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800242"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH04",
+    "problemUrl": "/learn/course/python/LTCPY01/problems/PYTH04",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800109"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH03",
+    "problemUrl": "/learn/course/python/LTCPY01/problems/PYTH03",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800063"
+  },
+  {
+    "date": "22/10/23",
+    "problemName": "PYTH02",
+    "problemUrl": "/learn/course/python/LTCPY01/problems/PYTH02",
+    "result": "accepted",
+    "accepted": true,
+    "language": "PYTH 3",
+    "solutionUrl": "/viewsolution/1026800008"
+  },
+  {
+    "date": "01/09/23",
+    "problemName": "TOTR",
+    "problemUrl": "/problems/TOTR",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1017713507"
+  },
+  {
+    "date": "31/08/23",
+    "problemName": "SUBPRB",
+    "problemUrl": "/problems/SUBPRB",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1017493900"
+  },
+  {
+    "date": "31/08/23",
+    "problemName": "SUBPRB",
+    "problemUrl": "/problems/SUBPRB",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1017493472"
+  },
+  {
+    "date": "27/08/23",
+    "problemName": "SSCRIPT",
+    "problemUrl": "/problems/SSCRIPT",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1016410394"
+  },
+  {
+    "date": "25/08/23",
+    "problemName": "MOONSOON",
+    "problemUrl": "/problems/MOONSOON",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1016169758"
+  },
+  {
+    "date": "25/08/23",
+    "problemName": "MOONSOON",
+    "problemUrl": "/problems/MOONSOON",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1016169289"
+  },
+  {
+    "date": "21/08/23",
+    "problemName": "KEPLERSLAW",
+    "problemUrl": "/problems/KEPLERSLAW",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1015315218"
+  },
+  {
+    "date": "21/08/23",
+    "problemName": "KEPLERSLAW",
+    "problemUrl": "/problems/KEPLERSLAW",
+    "result": "compilation error",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1015310058"
+  },
+  {
+    "date": "20/08/23",
+    "problemName": "QTOO_2523",
+    "problemUrl": "/problems/QTOO_2523",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1015118894"
+  },
+  {
+    "date": "17/08/23",
+    "problemName": "AIRM",
+    "problemUrl": "/problems/AIRM",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1014555700"
+  },
+  {
+    "date": "14/08/23",
+    "problemName": "ZEROSTRING",
+    "problemUrl": "/problems/ZEROSTRING",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1014031543"
+  },
+  {
+    "date": "14/08/23",
+    "problemName": "ZEROSTRING",
+    "problemUrl": "/problems/ZEROSTRING",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1014030869"
+  },
+  {
+    "date": "13/08/23",
+    "problemName": "XLSQUARE",
+    "problemUrl": "/problems/XLSQUARE",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013757537"
+  },
+  {
+    "date": "13/08/23",
+    "problemName": "XLSQUARE",
+    "problemUrl": "/problems/XLSQUARE",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013757128"
+  },
+  {
+    "date": "13/08/23",
+    "problemName": "XLSQUARE",
+    "problemUrl": "/problems/XLSQUARE",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013757062"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "ARRSWAP",
+    "problemUrl": "/problems/ARRSWAP",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013710474"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "ARRSWAP",
+    "problemUrl": "/problems/ARRSWAP",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013709979"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "ARRSWAP",
+    "problemUrl": "/problems/ARRSWAP",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013709596"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "CARDSWIPE",
+    "problemUrl": "/problems/CARDSWIPE",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013706930"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "KOL15A",
+    "problemUrl": "/problems/KOL15A",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013704869"
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "ALPHABET",
+    "problemUrl": "/problems/ALPHABET",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": ""
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "ALPHABET",
+    "problemUrl": "/problems/ALPHABET",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": ""
+  },
+  {
+    "date": "12/08/23",
+    "problemName": "LAPIN",
+    "problemUrl": "/problems/LAPIN",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013574990"
+  },
+  {
+    "date": "11/08/23",
+    "problemName": "MISSP",
+    "problemUrl": "/problems/MISSP",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013431398"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "AMMEAT",
+    "problemUrl": "/problems/AMMEAT",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013327394"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "AMMEAT",
+    "problemUrl": "/problems/AMMEAT",
+    "result": "runtime error(OTHER)",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013325500"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "AMMEAT",
+    "problemUrl": "/problems/AMMEAT",
+    "result": "runtime error(OTHER)",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013325001"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "AMMEAT",
+    "problemUrl": "/problems/AMMEAT",
+    "result": "runtime error(OTHER)",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1013324547"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "TSTROBOT",
+    "problemUrl": "/problems/TSTROBOT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013251480"
+  },
+  {
+    "date": "10/08/23",
+    "problemName": "EQUALELE",
+    "problemUrl": "/problems/EQUALELE",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1013247749"
+  },
+  {
+    "date": "07/08/23",
+    "problemName": "ALTSTR",
+    "problemUrl": "/problems/ALTSTR",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012710199"
+  },
+  {
+    "date": "07/08/23",
+    "problemName": "EZSPEAK",
+    "problemUrl": "/problems/EZSPEAK",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012687648"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "COMPRESSVD",
+    "problemUrl": "/problems/COMPRESSVD",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012432624"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "PAIREQ",
+    "problemUrl": "/problems/PAIREQ",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "PAIREQ",
+    "problemUrl": "/problems/PAIREQ",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "PAIREQ",
+    "problemUrl": "/problems/PAIREQ",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "PALL01",
+    "problemUrl": "/problems/PALL01",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012410599"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "BROKENSTRING",
+    "problemUrl": "/problems/BROKENSTRING",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": ""
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "WORDLE",
+    "problemUrl": "/problems/WORDLE",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012405542"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TLG",
+    "problemUrl": "/problems/TLG",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012401374"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TLG",
+    "problemUrl": "/problems/TLG",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012398426"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TLG",
+    "problemUrl": "/problems/TLG",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012397545"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TSORT",
+    "problemUrl": "/problems/TSORT",
+    "result": "partially accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012396021"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TSORT",
+    "problemUrl": "/problems/TSORT",
+    "result": "time limit exceeded",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012395432"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "FCTRL2",
+    "problemUrl": "/problems/FCTRL2",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1012394663"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "FCTRL2",
+    "problemUrl": "/problems/FCTRL2",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012393187"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "FCTRL2",
+    "problemUrl": "/problems/FCTRL2",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012393075"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "FCTRL2",
+    "problemUrl": "/problems/FCTRL2",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012392858"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "FCTRL2",
+    "problemUrl": "/problems/FCTRL2",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012392745"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TODOLIST",
+    "problemUrl": "/problems/TODOLIST",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012390978"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TODOLIST",
+    "problemUrl": "/problems/TODOLIST",
+    "result": "time limit exceeded",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012390612"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "TODOLIST",
+    "problemUrl": "/problems/TODOLIST",
+    "result": "time limit exceeded",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012390300"
+  },
+  {
+    "date": "05/08/23",
+    "problemName": "PRACTICEPERF",
+    "problemUrl": "/problems/PRACTICEPERF",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012387313"
+  },
+  {
+    "date": "03/08/23",
+    "problemName": "SEGM01",
+    "problemUrl": "/problems/SEGM01",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012124887"
+  },
+  {
+    "date": "03/08/23",
+    "problemName": "SEGM01",
+    "problemUrl": "/problems/SEGM01",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1012041062"
+  },
+  {
+    "date": "01/08/23",
+    "problemName": "IMDB",
+    "problemUrl": "/problems/IMDB",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": ""
+  },
+  {
+    "date": "31/07/23",
+    "problemName": "PERMUTATION",
+    "problemUrl": "/problems/PERMUTATION",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1011590114"
+  },
+  {
+    "date": "31/07/23",
+    "problemName": "PERMUTATION",
+    "problemUrl": "/problems/PERMUTATION",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1011589757"
+  },
+  {
+    "date": "30/07/23",
+    "problemName": "MAX_BIN",
+    "problemUrl": "/problems/MAX_BIN",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1011335781"
+  },
+  {
+    "date": "30/07/23",
+    "problemName": "MAX_BIN",
+    "problemUrl": "/problems/MAX_BIN",
+    "result": "accepted",
+    "accepted": true,
+    "language": "KTLN",
+    "solutionUrl": "/viewsolution/1011335423"
+  },
+  {
+    "date": "30/07/23",
+    "problemName": "MAX_BIN",
+    "problemUrl": "/problems/MAX_BIN",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1011332825"
+  },
+  {
+    "date": "29/07/23",
+    "problemName": "ZOOZ",
+    "problemUrl": "/problems/ZOOZ",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": "/viewsolution/1011190666"
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "accepted",
+    "accepted": true,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  },
+  {
+    "date": "28/07/23",
+    "problemName": "REVSORT",
+    "problemUrl": "/problems/REVSORT",
+    "result": "wrong answer",
+    "accepted": false,
+    "language": "JAVA",
+    "solutionUrl": ""
+  }
+]
